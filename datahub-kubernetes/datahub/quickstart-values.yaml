@@ -3,7 +3,7 @@
 datahub-gms:
   enabled: true
   image:
-    repository: linkedin/datahub-gms
+    repository: easi/datahub-gms
     tag: "latest"
 
 datahub-frontend:
@@ -18,7 +18,7 @@ datahub-frontend:
 datahub-mae-consumer:
   enabled: true
   image:
-    repository: linkedin/datahub-mae-consumer
+    repository: easi/datahub-mae-consumer
     tag: "latest"
 
 datahub-mce-consumer:
@@ -30,7 +30,7 @@ datahub-mce-consumer:
 elasticsearchSetupJob:
   enabled: true
   image:
-    repository: linkedin/datahub-elasticsearch-setup
+    repository: easi/datahub-elasticsearch-setup
     tag: "latest"
 
 kafkaSetupJob:
@@ -49,16 +49,27 @@ datahub-ingestion-cron:
   enabled: false
 
 global:
+  # elasticsearch:
+  #   host: "elasticsearch-master"
+  #   port: "9200"
+  #   indexPrefix: demo
+  #   useSSL: "true"
+  #   auth:
+  #     username: test
+  #     password:
+  #       secretRef: test
+  #       secretKey: test
+
   elasticsearch:
-    host: "elasticsearch-master"
+    host: "testing-es-http.elastic-system.svc"
     port: "9200"
-    indexPrefix: demo
+    indexPrefix: datahub
     useSSL: "true"
     auth:
-      username: test
+      username: elastic
       password:
-        secretRef: test
-        secretKey: test
+        secretRef: testing-es-elastic-user
+        secretKey: elastic
 
   kafka:
     bootstrap:

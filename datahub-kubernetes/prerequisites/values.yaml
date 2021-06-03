@@ -31,12 +31,12 @@ elasticsearch:
   #     memory: "512M"
 
   # # Request smaller persistent volumes.
-  # volumeClaimTemplate:
-  #   accessModes: [ "ReadWriteOnce" ]
-  #   storageClassName: "standard"
-  #   resources:
-  #     requests:
-  #       storage: 100M
+  volumeClaimTemplate:
+    # accessModes: [ "ReadWriteOnce" ]
+    storageClassName: "gp2"
+    # resources:
+    #   requests:
+    #     storage: 100M
 
 # Official neo4j chart uses the Neo4j Enterprise Edition which requires a license
 neo4j:
