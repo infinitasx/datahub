@@ -1,7 +1,7 @@
 # Default configuration for pre-requisites to get you started
 # Copy this file and update to the configuration of choice
 elasticsearch:
-  enabled: true # set this to false, if you want to provide your own ES instance.
+  enabled: false # set this to false, if you want to provide your own ES instance.
   cluster:
     env:
       MINIMUM_MASTER_NODES: 1
