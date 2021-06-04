@@ -9,7 +9,7 @@ datahub-gms:
 datahub-frontend:
   enabled: true
   image:
-    repository: linkedin/datahub-frontend-react
+    repository: easi/datahub-frontend-react
     tag: "latest"
   # Set up ingress to expose react front-end
   ingress:
