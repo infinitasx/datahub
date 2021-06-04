@@ -57,7 +57,24 @@ ingress:
 # Extra environment variables
 # This will be appended to the current 'env:' key. You can use any of the kubernetes env
 # syntax here
-extraEnvs: []
+extraEnvs:
+  - name: ELASTIC_CLIENT_SSL_PROTOCOL
+    value: TLSv1.2
+  - name: ELASTIC_CLIENT_SSL_SECURE_RANDOM_IMPLEMENTATION
+    value: 
+  - name: ELASTIC_CLIENT_SSL_TRUST_STORE_FILE
+    value: /etc/cert/ca.jks
+  - name: ELASTIC_CLIENT_SSL_TRUST_STORE_TYPE
+    value: JKS
+  - name: ELASTIC_CLIENT_SSL_TRUST_STORE_PASSWORD
+    value: easidata
+  - name: ELASTIC_CLIENT_SSL_KEY_STORE_FILE
+    value: /etc/cert/tls.jks
+  - name: ELASTIC_CLIENT_SSL_KEY_STORE_TYPE
+    value: JKS
+  - name: ELASTIC_CLIENT_SSL_KEY_STORE_PASSWORD
+    value: easidata
+
   # - name: MY_ENVIRONMENT_VAR
  #   value: the_value_goes_here
 

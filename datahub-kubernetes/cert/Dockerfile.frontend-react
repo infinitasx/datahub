@@ -1,0 +1,7 @@
+FROM linkedin/datahub-frontend-react
+USER root
+ADD ca.crt /usr/local/share/ca-certificates/ca.crt
+ADD tls.crt /usr/local/share/ca-certificates/tls.crt
+RUN update-ca-certificates
+ADD ca.jks /etc/cert/ca.jks
+ADD tls.jks /etc/cert/tls.jks
